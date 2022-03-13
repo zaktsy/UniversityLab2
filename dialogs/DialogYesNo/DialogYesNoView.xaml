@@ -1,0 +1,31 @@
+﻿<ContentControl x:Class="University_Lab2.dialogs.DialogYesNo.DialogYesNoView"  
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:vm="clr-namespace:University_Lab2.dialogs.DialogYesNo" 
+                d:DataContext="{d:DesignInstance Type = vm:DialogYesNoViewModel}"
+                mc:Ignorable="d"  
+             d:DesignHeight="100" d:DesignWidth="300"
+             >
+    <Border  BorderThickness="2">
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Label Content="{Binding Message}" Margin="10" FontSize="20" Opacity="0.9"/>
+                <Button Content="Да" HorizontalAlignment="Right" Margin="0,65,95,10" VerticalAlignment="Top" Width="75"   
+        Command="{Binding YesCommand}"   
+        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+                <Button Content="Нет" HorizontalAlignment="Right" Margin="0,65,5,10" VerticalAlignment="Top" Width="75"   
+        Command="{Binding NoCommand}"  
+        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+            </Grid>
+
+        </Grid>
+
+    </Border>
+</ContentControl> 
